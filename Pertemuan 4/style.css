@@ -1,0 +1,61 @@
+.atas{
+    margin: 10px 15px;
+    padding: 5px;
+    border-radius: 15px;
+    background: cyan;
+}
+h1{   
+    text-align: center;
+    text-shadow: 2px 2px #555;
+    font-family: sans-serif;   
+    color: blue;
+}
+.kiri{
+    margin: 10px 15px;
+    padding: 10px;
+    border-radius: 15px;
+    background: #ecfa91;
+    display: grid;
+    column-gap: 12px;
+    grid-template-columns: repeat(12, 1fr);  
+}
+.daftar{
+    margin: 10px;
+    padding: 0 10px;
+    grid-column: 1 / span 3;
+    background: #90e07e;
+}
+.daftar ul{
+    list-style: none;
+    padding: 10px;
+}
+.daftar ul li{
+    padding: 10px;
+    margin: 10px 0;
+    background: green;
+}
+.logo{ 
+    margin: 0 auto;
+    width: 30%;
+    display: block;
+}
+p{
+    color: #0b872c;
+}
+.tulisan {
+    margin: 10px;
+    padding: 10px;
+    grid-column: 4 / span 9;
+    background: #90e07e;
+}
+.bawah{
+    margin: 10px 15px;
+    padding: 5px 0;
+    border-radius: 15px;
+    background: #e3b059;
+}
+h3{
+    text-align: center;
+    font-family: monospace;
+    color: #b03f25;
+}

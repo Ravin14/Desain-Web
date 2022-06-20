@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kalkulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP&family=Nunito:wght@200;300;400&family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-image: url('https://i.pinimg.com/564x/a9/40/59/a94059d9f0c985f4d16a3af9d4937348.jpg');
+            background-size: cover;
+        }
+        .container {
+            font-family: 'Noto Sans JP', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        form{
+            background-color: #F77E21;
+            width: 300px;
+            height: 350px;
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 16px;
+            border-radius: 12px;
+        }
+        .button{
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+        button,input {
+            font-size: 16px;
+            padding: 4px 8px;
+            width: 100%;
+        }          
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form">
+            <h1>Kalkulator</h1>
+            <input type="number" name="number1" id="number1" placeholder="0">
+            <input type="number" name="number2" id="number2" placeholder="0">
+            <div class="button">
+                <button type="button" onclick="tambah()">+</button>
+                <button type="button" onclick="kurang()">-</button>
+                <button type="button" onclick="kali()">*</button>
+                <button type="button" onclick="bagi()">/</button>
+                <button onclick="reset()">Clear</button>
+            </div>
+            <input type="text" name="result" id="result" disabled>
+        </form>
+    </div>
+
+    <script>
+        function getValue() {
+            let a = document.querySelector('#number1').value;
+            let b = document.querySelector('#number2').value;
+            if (a == '') {
+                a = 0;
+            } else if (b == '') {
+                b = 0;
+            }
+            return [a, b];
+        }
+
+        function tambah() {
+            let values = getValue();
+            let x = (parseFloat(values[0]) + parseFloat(values[1]));
+            if (x !== x) {
+                console.log('0');
+                document.getElementById('result').value = 0;
+            } else {
+                console.log(x);
+                document.getElementById('result').value = x;
+            }
+        }
+
+        function kurang() {
+            let values = getValue();
+            let x = (parseFloat(values[0]) - parseFloat(values[1]));
+            if (x !== x) {
+                console.log('0');
+                document.getElementById('result').value = 0;
+            } else {
+                console.log(x);
+                document.getElementById('result').value = x;
+            }
+        }
+
+        function kali() {
+            let values = getValue();
+            let x = (parseFloat(values[0]) * parseFloat(values[1]));
+            if (x !== x) {
+                console.log('0');
+                document.getElementById('result').value = 0;
+            } else {
+                console.log(x);
+                document.getElementById('result').value = x;
+            }
+        }
+
+        function bagi() {
+            let values = getValue();
+            let x = (parseFloat(values[0]) / parseFloat(values[1]));
+            if (parseFloat(values[1]) == 0 || values[1] == '') {
+                document.getElementById('result').value = '~';
+            } else {
+                if (x !== x) {
+                    document.getElementById('result').value = 0;
+                } else {
+
+                    console.log(x);
+                    document.getElementById('result').value = x;
+                }
+            }
+        }
+
+        function reset() {
+            console.clear();
+        }
+    </script>
+</body>
+
+</html>
